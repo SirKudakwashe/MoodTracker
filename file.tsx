@@ -1,5 +1,5 @@
 // Typescript
-import {Text} from 'react-native';
+import { Text } from 'react-native';
 
 // function add(a: number, b: number): number {
 //   return a + b;
@@ -129,9 +129,9 @@ function printCar(car: {
   console.log(str);
 }
 
-printCar({make: 'bmw', model: '320d', year: 2013});
+printCar({ make: 'bmw', model: '320d', year: 2013 });
 
-printCar({make: 'bmw', model: '8 series', year: 2013, chargeVoltage: 234});
+printCar({ make: 'bmw', model: '8 series', year: 2013, chargeVoltage: 234 });
 
 // dictionaries
 
@@ -166,3 +166,5 @@ interface CALCULATE {
 const add: CALCULATE = (a, b) => a + b;
 
 console.log(`result: ${add(5, 9)}`);
+
+// useCallBack is a react hook that is used form memoizing interactions withing a react component
