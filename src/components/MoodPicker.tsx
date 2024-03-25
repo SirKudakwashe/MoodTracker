@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, FC } from 'react';
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 import { MoodOptionType } from '../types';
 import { theme } from '../theme';
@@ -16,7 +16,7 @@ type MoodPickerProps = {
   handleSelectMood: (moodOption: MoodOptionType) => void;
 };
 
-export const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
+export const MoodPicker: FC<MoodPickerProps> = ({ handleSelectMood }) => {
   const [selectedMood, setSelectedMood] = useState<MoodOptionType>();
   const [hasSelected, setHasSelected] = useState<Boolean>(false);
 
