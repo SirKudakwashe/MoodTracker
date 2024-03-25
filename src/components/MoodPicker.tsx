@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { MoodOptionType } from '../types';
 import { theme } from '../theme';
@@ -16,6 +16,13 @@ type MoodPickerProps = {
 
 export const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
   const [selectedMood, setSelectedMood] = React.useState<MoodOptionType>();
+
+  const handleSelect = useCallback(() => {
+    if (selectedMood) {
+      handleSelectMood(selectedMood);
+      setSelectedMood(undefined);
+    }
+  }, [handleSelectMood, selectedMood]);
 
   return (
     <View style={styles.container}>
@@ -39,13 +46,7 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
           </View>
         ))}
       </View>
-      <Pressable
-        style={styles.button}
-        onPress={() => {
-          if (selectedMood) {
-            handleSelectMood(selectedMood);
-          }
-        }}>
+      <Pressable style={styles.button} onPress={handleSelect}>
         <Text style={styles.buttonText}>Choose</Text>
       </Pressable>
     </View>
