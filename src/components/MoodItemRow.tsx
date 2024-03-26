@@ -14,7 +14,7 @@ export const MoodItemRow: React.FC<MoodItemRowProps> = ({ item }) => {
         <Text style={styles.moodValue}>{item.mood.emoji}</Text>
         <Text style={styles.moodDescription}>{item.mood.description}</Text>
       </View>
-      <Text style={styles.moodDate}>{new Date(item.timestamp).toString()}</Text>
+      <Text style={styles.moodDate}>delete</Text>
     </View>
   );
 };
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     padding: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
   },
   moodDescription: {
